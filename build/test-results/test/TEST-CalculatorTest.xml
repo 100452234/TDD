@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculatorTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2023-03-08T09:55:14" hostname="DESKTOP-35OLV8B" time="0.077">
+  <properties/>
+  <testcase name="Check if 3+7=10" classname="CalculatorTest" time="0.031"/>
+  <testcase name="Check if 1.2+1.1=2.3" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check throw if -3&lt;0" classname="CalculatorTest" time="0.003"/>
+  <testcase name="Check throw if -1.2&lt;0" classname="CalculatorTest" time="0.0"/>
+  <testcase name="Check if 4/2=2" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if 31/11=2.82" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if 10.2/2=5.1" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if -46/2=-23" classname="CalculatorTest" time="0.0"/>
+  <testcase name="Check if -80/-80=1" classname="CalculatorTest" time="0.0"/>
+  <testcase name="Check if -10+31=21" classname="CalculatorTest" time="0.0"/>
+  <testcase name="Check if -3+-7=-10" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if 1.2+-1.1=0.1" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if sqrt(37)=6.08" classname="CalculatorTest" time="0.0"/>
+  <testcase name="Check if sqrt(83)=9.11" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if sqrt(625)=25" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if sqrt(0)=0" classname="CalculatorTest" time="0.0"/>
+  <testcase name="Check if -3 and -7 &gt;= 0" classname="CalculatorTest" time="0.002"/>
+  <testcase name="Check if 1.2 and -1.1 &gt;= 0" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if sqrt(37)=6.08" classname="CalculatorTest" time="0.0"/>
+  <testcase name="Check if sqrt(83)=9.11" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check if sqrt(625)=25" classname="CalculatorTest" time="0.0"/>
+  <testcase name="Check if sqrt(0)=0" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check throw if 0=0" classname="CalculatorTest" time="0.001"/>
+  <testcase name="Check throw if 0=0" classname="CalculatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
