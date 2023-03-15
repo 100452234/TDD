@@ -1,4 +1,4 @@
-import java.text.DecimalFormat;
+import java.util.List;
 
 public class Calculator {
     // Method 1: create a method that adds 2 numbers and returns the result
@@ -31,11 +31,21 @@ public class Calculator {
     }
 
     // Method 5: develop a method that returns the square root of a number
-    public static double method5(double a){
-        if (a < 0){
-            throw new ArithmeticException("Square root of negative number");
+    public static float method5(List<Float> a){
+        // Check list is not empty
+        if (a.isEmpty()){
+            throw new ArithmeticException("List is empty");
         }
-        return Math.sqrt(a);
+
+        // Compute result
+        float sum = 0;
+        for (Float item : a) {
+            sum += item;
+        }
+        return sum / a.size();
     }
+
+    // Method 5: develop a method that returns the square root of a number
+    public static String method6(int a){ return Integer.toBinaryString(a); }
 
 }
