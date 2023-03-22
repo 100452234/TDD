@@ -36,7 +36,8 @@ public class StringManipulatorTest {
                 Arguments.arguments("", 0),
                 Arguments.arguments("AaAaAa", 6),
                 Arguments.arguments("CRY EVERYDAY", 3),
-                Arguments.arguments("dcfvgb gbhnjby", 0)
+                Arguments.arguments("dcfvgb gbhnjby", 0),
+                Arguments.arguments("run for your life", 6)
         );
     }
 
@@ -92,6 +93,61 @@ public class StringManipulatorTest {
                 Arguments.arguments("YamamaY", true),
                 Arguments.arguments("somee mos", true),
                 Arguments.arguments("some nose", false)
+        );
+    }
+
+    // Method 12
+    // Test result is correct
+    @ParameterizedTest(name = "Check: {0} with reversed word is {1}")
+    @MethodSource("sourceMethod12_result")
+    public void checkMethod12_result(String s, String expected){
+        Assertions.assertEquals(expected, StringManipulator.method12(s));
+    }
+    public static Stream<Arguments> sourceMethod12_result(){
+        return Stream.of(
+                Arguments.arguments("I am a student", "student a am I"),
+                Arguments.arguments("Computers Like We", "We Like Computers"),
+                Arguments.arguments("testing am i", "i am testing"),
+                Arguments.arguments("hi", "hi"),
+                Arguments.arguments("", ""),
+                Arguments.arguments("Water    Clean", "Clean Water")
+        );
+    }
+
+    // Method 13
+    // Test result is correct
+    @ParameterizedTest(name = "Check: {0} without duplicated characters is {1}")
+    @MethodSource("sourceMethod13_result")
+    public void checkMethod13_result(String s, String expected){
+        Assertions.assertEquals(expected, StringManipulator.method13(s));
+    }
+    public static Stream<Arguments> sourceMethod13_result(){
+        return Stream.of(
+                Arguments.arguments("I am a student", "I am studen"),
+                Arguments.arguments("Computers Like We", "Computers Lik W"),
+                Arguments.arguments("testing am i", "tesing am"),
+                Arguments.arguments("hiI", "hi"),
+                Arguments.arguments("", ""),
+                Arguments.arguments("the pool is loose", "the pol is")
+        );
+    }
+
+    // Method 14
+    // Test result is correct
+    @ParameterizedTest(name = "Check: {0} without duplicated words is {1}")
+    @MethodSource("sourceMethod14_result")
+    public void checkMethod14_result(String s, String expected){
+        Assertions.assertEquals(expected, StringManipulator.method14(s));
+    }
+    public static Stream<Arguments> sourceMethod14_result(){
+        return Stream.of(
+                Arguments.arguments("I like black chocolate but I don't like white chocolate", "I like black chocolate but don't white"),
+                Arguments.arguments("People will be people", "People will be"),
+                Arguments.arguments("The water runs as the river runs", "The water runs as river"),
+                Arguments.arguments("", ""),
+                Arguments.arguments("Computer", "Computer"),
+                Arguments.arguments("Computer science", "Computer science"),
+                Arguments.arguments("Computer is the the the nicest computer", "Computer is the nicest")
         );
     }
 }
