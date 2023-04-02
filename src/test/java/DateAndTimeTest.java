@@ -63,4 +63,41 @@ public class DateAndTimeTest {
         );
     }
 
+    // Method 21
+    // Test result is correct
+    @ParameterizedTest(name = "Check if date {0} falls on weekend")
+    @MethodSource("sourceMethod21_result")
+    public void checkMethod21_result(LocalDate d, boolean expected){
+        Assertions.assertEquals(expected, DateAndTime.method21(d));
+    }
+    public static Stream<Arguments> sourceMethod21_result(){
+        return Stream.of(
+                Arguments.arguments(LocalDate.of(2023, 4, 3), false),
+                Arguments.arguments(LocalDate.of(2023, 4, 4), false),
+                Arguments.arguments(LocalDate.of(2023, 4, 5), false),
+                Arguments.arguments(LocalDate.of(2023, 4, 6), false),
+                Arguments.arguments(LocalDate.of(2023, 4, 7), false),
+                Arguments.arguments(LocalDate.of(2023, 4, 8), true),
+                Arguments.arguments(LocalDate.of(2023, 4, 9), true)
+        );
+    }
+
+    // Method 22
+    // Test result is correct
+    @ParameterizedTest(name = "Check if date {0} falls on weekend")
+    @MethodSource("sourceMethod22_result")
+    public void checkMethod22_result(LocalDate d, String expected){
+        Assertions.assertEquals(expected, DateAndTime.method22(d));
+    }
+    public static Stream<Arguments> sourceMethod22_result(){
+        return Stream.of(
+                Arguments.arguments(LocalDate.of(2023, 4, 3), "Monday"),
+                Arguments.arguments(LocalDate.of(2023, 4, 4), "Tuesday"),
+                Arguments.arguments(LocalDate.of(2023, 4, 5), "Wednesday"),
+                Arguments.arguments(LocalDate.of(2023, 4, 6), "Thursday"),
+                Arguments.arguments(LocalDate.of(2023, 4, 7), "Friday"),
+                Arguments.arguments(LocalDate.of(2023, 4, 8), "Saturday"),
+                Arguments.arguments(LocalDate.of(2023, 4, 9), "Sunday")
+        );
+    }
 }

@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
@@ -19,39 +20,20 @@ public class DateAndTime {
 
     // Method 20: create a method that computes the number of days between two dates and returns the result
     public static int method20(LocalDate d1, LocalDate d2){
-        if (d1.isEqual(d2)){
-            return 0;
-        }
 
-        int year = Math.abs(Period.between(d1, d2).getYears());
-        int month = Math.abs(Period.between(d1, d2).getMonths());
-        int day = Math.abs(Period.between(d1, d2).getDays());
-        System.out.println(year);
-        System.out.println(month);
-        System.out.println(day);
-        System.out.println("period "+Period.between(d1, d2));
+        return Math.abs(( int) d1.until(d2, DAYS) );
+    }
 
-        int start, end;
-        if (d1.isBefore(d2)){
-            start = d1.getYear();
-            end = d2.getYear();
-        }else{
-            start = d2.getYear();
-            end = d1.getYear();
-        }
+    // Method 21: create a method that checks if given date falls n weekend and returns a boolean
+    public static boolean method21(LocalDate d){
+        String day_week = d.getDayOfWeek().toString();
+        day_week = day_week.toLowerCase();
+        return day_week.equals("saturday") || day_week.equals("sunday");
+    }
 
-        // Check how many leap years are between dates
-        int countLeap = 0;
-        for(int i = start; i < end; i++){
-            if(method19(i)){
-                countLeap += 1;
-            }
-        }
-        System.out.println(countLeap*366);
-        System.out.println((year-countLeap)*365);
-        System.out.println((int)Math.floor(month*30.4167)-1);
-        System.out.println(day);
-
-        return countLeap*366 + (year-countLeap)*365 + (int)Math.floor(month*30.4167)-1 + day;
+    // Method 22: create a method that returns the day of the week for a given date
+    public static String method22(LocalDate d){
+        String day_week = d.getDayOfWeek().toString();
+        return day_week.charAt(0) + day_week.substring(1).toLowerCase();
     }
 }
