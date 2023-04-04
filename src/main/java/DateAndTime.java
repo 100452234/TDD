@@ -18,11 +18,10 @@ public class DateAndTime {
 
     // Method 20: create a method that computes the number of days between two dates and returns the result
     public static int method20(LocalDate d1, LocalDate d2){
-
-        return Math.abs(( int) d1.until(d2, DAYS) );
+        return Math.abs((int) d1.until(d2, DAYS) );
     }
 
-    // Method 21: create a method that checks if given date falls n weekend and returns a boolean
+    // Method 21: create a method that checks if given date falls on weekend and returns a boolean
     public static boolean method21(LocalDate d){
         String day_week = d.getDayOfWeek().toString();
         day_week = day_week.toLowerCase();

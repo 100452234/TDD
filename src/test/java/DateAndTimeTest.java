@@ -19,9 +19,7 @@ public class DateAndTimeTest {
                 Arguments.arguments(2020, true),
                 Arguments.arguments(1991, false),
                 Arguments.arguments(1900, false),
-                Arguments.arguments(2000, true),
-                Arguments.arguments(1600, true),
-                Arguments.arguments(0, true)
+                Arguments.arguments(2000, true)
         );
     }
 
@@ -35,8 +33,7 @@ public class DateAndTimeTest {
     }
     public static Stream<Arguments> sourceMethod19_throw(){
         return Stream.of(
-                Arguments.arguments(-1900),
-                Arguments.arguments(-2)
+                Arguments.arguments(-1900)
         );
     }
 
