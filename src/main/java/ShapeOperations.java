@@ -25,18 +25,20 @@ public class ShapeOperations {
         if(s1==0 || s2==0 || s3==0){
             throw new IllegalArgumentException("Side length is zero, so not a triangle");
         }
+        if(s1>=s2+s3 || s2>=s1+s3 || s3>=s1+s2){
+            throw new IllegalArgumentException("Not triangle: sum of two sides is less than the third");
+        }
 
         if(s1 == s2 && s1==s3){
             return "equilateral";
         }else if(s1 == s2 || s2==s3 || s1==s3){
             return "isosceles";
-        }else{
-            return "scalene";
         }
+        return "scalene";
     }
 
     // Method 18: create a method that returns the distance between two points
     public static double method18(Point x, Point y){
-        return Math.sqrt(Math.pow(y.getX() - x.getX(), 2) + Math.pow(y.getY() - x.getY(), 2));
+        return x.distance(y);       // Math.sqrt(Math.pow(y.getX() - x.getX(), 2) + Math.pow(y.getY() - x.getY(), 2));
     }
 }

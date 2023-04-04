@@ -25,7 +25,7 @@ public class CalculatorTest {
 
     // Method 2
     // Test arguments are positive
-    @ParameterizedTest(name = "Check if {0} and {1} >= 0")
+    @ParameterizedTest(name = "Check if {0} and {1} are >= 0")
     @MethodSource("sourceMethod2_throw")
     public void checkMethod2_throw(double n1, double n2){
         Assertions.assertThrows(IllegalArgumentException.class, () -> {

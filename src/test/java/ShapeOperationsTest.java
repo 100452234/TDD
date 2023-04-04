@@ -80,16 +80,18 @@ public class ShapeOperationsTest {
     public static Stream<Arguments> sourceMethod17_result(){
         return Stream.of(
                 Arguments.arguments(4, 4, 4, "equilateral"),
-                Arguments.arguments(1, 1, 3, "isosceles"),
-                Arguments.arguments(2, 4, 5, "scalene"),
+                Arguments.arguments(2, 2, 3, "isosceles"),
                 Arguments.arguments(2.4, 4.2, 2.4, "isosceles"),
-                Arguments.arguments(5, 4.2, 4.2, "isosceles")
+                Arguments.arguments(5, 4.2, 4.2, "isosceles"),
+                Arguments.arguments(2, 4, 5, "scalene")
 
         );
     }
 
-    // Test exception thrown when any side is negative or zero
-    @ParameterizedTest(name = "Check throw if {0}<=0")
+    // Test exception thrown when:
+    // - any side is negative or zero: impossible
+    // - sum of two sides is less than the third: not triangle
+    @ParameterizedTest(name = "Check throw if impossible or not triangle ")
     @MethodSource("sourceMethod17_throw")
     public void checkMethod17_throw(double s1, double s2, double s3){
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -103,7 +105,10 @@ public class ShapeOperationsTest {
                 Arguments.arguments(3, 1, -3),
                 Arguments.arguments(0, 1, 3),
                 Arguments.arguments(3, 0, 3),
-                Arguments.arguments(3, 1, 0)
+                Arguments.arguments(3, 1, 0),
+                Arguments.arguments(3, 1, 1),
+                Arguments.arguments(1, 3, 1),
+                Arguments.arguments(1, 1, 3)
         );
     }
 
@@ -117,7 +122,7 @@ public class ShapeOperationsTest {
     public static Stream<Arguments> sourceMethod18_result(){
         return Stream.of(
                 Arguments.arguments(new Point(1,1), new Point(4, 4), 4.24),
-                Arguments.arguments(new Point(8,7), new Point(6, 2), 5.39),
+                Arguments.arguments(new Point(8,7), new Point(-6, 2), 14.87),
                 Arguments.arguments(new Point(-9,-5), new Point(2, -4), 11.05),
                 Arguments.arguments(new Point(0,0), new Point(2, 8), 8.25)
         );

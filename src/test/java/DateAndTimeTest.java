@@ -3,10 +3,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.stream.Stream;
 
 public class DateAndTimeTest {
@@ -29,7 +26,7 @@ public class DateAndTimeTest {
     }
 
     // Test exception thrown when year is negative
-    @ParameterizedTest(name = "Check throw if negative year")
+    @ParameterizedTest(name = "Check throw if year {0} is negative")
     @MethodSource("sourceMethod19_throw")
     public void checkMethod19_throw(int y){
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -84,7 +81,7 @@ public class DateAndTimeTest {
 
     // Method 22
     // Test result is correct
-    @ParameterizedTest(name = "Check if date {0} falls on weekend")
+    @ParameterizedTest(name = "Check if date {0} is {1}")
     @MethodSource("sourceMethod22_result")
     public void checkMethod22_result(LocalDate d, String expected){
         Assertions.assertEquals(expected, DateAndTime.method22(d));
