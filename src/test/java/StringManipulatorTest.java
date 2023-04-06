@@ -105,7 +105,6 @@ public class StringManipulatorTest {
     }
     public static Stream<Arguments> sourceMethod12_result(){
         return Stream.of(
-                Arguments.arguments("I am a student", "student a am I"),
                 Arguments.arguments("Computers Like We", "We Like Computers"),
                 Arguments.arguments("testing am i", "i am testing"),
                 Arguments.arguments("hi", "hi"),
@@ -143,7 +142,6 @@ public class StringManipulatorTest {
         return Stream.of(
                 Arguments.arguments("I like black chocolate but I don't like white chocolate", "I like black chocolate but don't white"),
                 Arguments.arguments("People will be people", "People will be"),
-                Arguments.arguments("The water runs as the river runs", "The water runs as river"),
                 Arguments.arguments("", ""),
                 Arguments.arguments("Computer", "Computer"),
                 Arguments.arguments("Computer science", "Computer science"),

@@ -30,7 +30,7 @@ public class Calculator {
         return Math.sqrt(a);
     }
 
-    // Method 5: develop a method that returns the average of a list of numbers
+    // Method 5: develop a method that returns the square root of a number
     public static float method5(List<Float> a){
         // Check list is not empty
         if (a.isEmpty()){
@@ -45,7 +45,7 @@ public class Calculator {
         return sum / a.size();
     }
 
-    // Method 6: develop a method that returns a given integer in binary format (in a string)
+    // Method 5: develop a method that returns the square root of a number
     public static String method6(int a){ return Integer.toBinaryString(a); }
 
 }

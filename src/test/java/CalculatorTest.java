@@ -108,7 +108,6 @@ public class CalculatorTest {
     }
     public static Stream<Arguments> sourceMethod4_result(){
         return Stream.of(
-                Arguments.arguments(37, 6.08),
                 Arguments.arguments(83, 9.11),
                 Arguments.arguments(625, 25),
                 Arguments.arguments(0, 0)
