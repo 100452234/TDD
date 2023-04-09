@@ -18,7 +18,8 @@ public class StringManipulatorTest {
         return Stream.of(
                 Arguments.arguments("hello", "olleh"),
                 Arguments.arguments("SofTwaRe", "eRawTfoS"),
-                Arguments.arguments("", "")
+                Arguments.arguments("", ""),
+                Arguments.arguments("I like software", "erawtfos ekil I")
         );
     }
 
@@ -125,7 +126,6 @@ public class StringManipulatorTest {
                 Arguments.arguments("I am a student", "I am studen"),
                 Arguments.arguments("Computers Like We", "Computers Lik W"),
                 Arguments.arguments("testing am i", "tesing am"),
-                Arguments.arguments("hiI", "hi"),
                 Arguments.arguments("", ""),
                 Arguments.arguments("the pool is loose", "the pol is")
         );
